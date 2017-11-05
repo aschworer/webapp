@@ -83,6 +83,8 @@ public class AdminProjectEditController {
                     boolean isManagerAddedAlready = false;
                     if ((existingProject != null) && (existingProject.getManagers() != null)) {
                         for (Contributor existingManager : existingProject.getManagers()) {
+                            logger.info("existingManager.getId(): " + existingManager.getId());
+                            logger.info("manager.getId(): " + manager.getId());
                             if (existingManager.getId().equals(manager.getId())) {
                                 isManagerAddedAlready = true;
                                 break;
